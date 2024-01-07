@@ -2,6 +2,8 @@
 # module. In this case, it returns the path to the directory containing the current module.
 
 output "kubeconfig" {
+  depends_on  = [ local_file.kubeconfig ]
+
   value       = "${path.module}/kubeconfig"
   description = "The path to the kubeconfig file"
 }
